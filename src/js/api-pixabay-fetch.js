@@ -1,10 +1,8 @@
-
-const BASE_URL = 'https://pixabay.com/api/';
-
 // Функция запроса на сервер
-export const getPhotos = async (wordForSearch) => { 
+export const getPhotos = async (wordForSearch, startPage) => { 
 
     // Параметры поиска
+    const BASE_URL = 'https://pixabay.com/api/';
     const searchParams = new URLSearchParams({
     key: '2842151-bd094d52b36040a4b6da8b1da',
     format: 'json',
@@ -12,12 +10,11 @@ export const getPhotos = async (wordForSearch) => {
     image_type: 'photo',
     orientation: 'horizontal',
     safesearch: 'true',
-    page: 1,
+    page: startPage,
     per_page: 10,
     });
-
-    console.log(`${BASE_URL}?${searchParams}`);
-
+    
+    // Запрос на сервер
     const response = await fetch(`${BASE_URL}?${searchParams}`);
     if (!response.ok) {
         throw new Error(response.statusText)

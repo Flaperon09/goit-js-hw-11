@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page title</title>
     <link rel="stylesheet" href="./css/common.css" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/notiflix/dist/notiflix-3.2.7.min.css"
+    />
+    <!-- <link
+      rel="stylesheet"
+      href="../node_modules/simplelightbox/dist/simple-lightbox.min.css"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css"
+    />
   </head>
   <body>
     <!-- Форма запроса -->
@@ -21,6 +33,13 @@
     <div class="gallery">
       <!-- Карточки изображений -->
     </div>
+    <!-- Кнопка Load more -->
+    <div class="container">
+      <button type="button" class="js-hidden btn-more">Load more</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
     <script type="module" src="./index.js"></script>
+    <script src="../node_modules/notiflix/dist/notiflix-3.2.7.min.js"></script>
+    <!-- <script src="../node_modules/simplelightbox/dist/simple-lightbox.min.js"></script> -->
   </body>
 </html>
