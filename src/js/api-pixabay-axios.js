@@ -16,7 +16,8 @@ export async function getPhotos(wordForSearch, startPage) {
             per_page: 12,
         });
         // Запрос на сервер
-        return response = await axios.get(`${BASE_URL}?${searchParams}`)
+        const response = await axios.get(`${BASE_URL}?${searchParams}`);
+        return response;
     } catch (error) {
         console.error(error);
     }
