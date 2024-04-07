@@ -105,14 +105,14 @@ function onLoadMore() {
       if (response.data.hits.length === 0) {
         buttonMore.classList.add("js-hidden");
         // Вывод сообщения: "Фотографии закончились!"
-        Notify.success("We're sorry, but you've reached the end of search results.");
+        Notify.info("We're sorry, but you've reached the end of search results.");
       } else {
         // Добавление разметки загруженных фото из api-pixabay-fetch
         // galleryOfPhotos.innerHTML = createGallery(response.hits);
       
         // Добавление разметки загруженных фото из api-pixabay-axios если фото есть
         galleryOfPhotos.insertAdjacentHTML("beforeend", createGallery(response.data.hits));
-        // Обновление лайт бокса после добавления новых фото
+        // Обновление Lightbox после добавления новых фото
         lightbox.refresh();
       }
     })
@@ -121,24 +121,25 @@ function onLoadMore() {
 
 // Функция добавления слушателя клика по фото
 function listener() {
-  // Добавление слушателя клика по фото
-        const clickImg = document.querySelector('.gallery');
-        clickImg.addEventListener('click', hendleClick);
-        console.log('Обработчик клика слышит клик после респонса');
-        console.log('clickImg: ', clickImg);
+  // Выбор ссылок на большие фото
+  const clickImg = document.querySelectorAll('.gallery a');
+  // Добавление слушателя клика на ВСЕ фото (querySelectorAll)
+  clickImg.forEach((elem) => {
+    elem.addEventListener('click', hendleClick)
+  });
 }
     
 // Функция вызова Lightbox
 function hendleClick(event) {
-  console.log('Клик внутри функции вызова Lightbox');
   // Блокирование действий по умолчанию
   event.preventDefault(); 
-
   // Блокирование действий при клике не по картинке
-    if (event.target.nodeName !== "IMG") {
-        return;
+  if (event.target.nodeName !== "IMG") {
+    return;
   };
 
-  lightbox.open();
-  console.log('Lightbox вызван');
+  // Обновление Lightbox после первого добавления фото
+  lightbox.refresh(); 
+  // Инициализация Lightbox
+  lightbox.open(event.currentTarget);
 }
