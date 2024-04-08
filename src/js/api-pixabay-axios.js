@@ -13,7 +13,7 @@ export async function getPhotos(wordForSearch, startPage) {
             orientation: 'horizontal',
             safesearch: 'true',
             page: startPage,
-            per_page: 12,
+            per_page: 40,
         });
         // Запрос на сервер
         const response = await axios.get(`${BASE_URL}?${searchParams}`);

@@ -2,15 +2,36 @@
     box-sizing: border-box;
 }
 
+/* Стиль контейнера хедера */
+.header-fixed {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+
+    display: block;
+    width: 100%;
+}
+
 /* Стиль для формы запроса */
 .search-form {
     display: flex;
     justify-content: center;
-    background-color: rgba(85, 85, 240, 0.764);
+    background-color: #5555f0;
     padding-left: 50%;
     padding-right: 50%;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+/* Стиль поля input */
+.search-form input {
+    outline: none;
+}
+
+/* Стиль кнопки поиска */
+.btn-search {
+    position: relative;
+    left: -2px;
 }
 
 /* Стиль для скрытия кнопки More photos */
@@ -26,7 +47,7 @@
 /* Стиль для кнопки More photos */
 .btn-more {
     padding: 10px;
-    background-color: rgba(85, 85, 240, 0.764);
+    background-color: #5555f0;
 
     border: 0;
     border-radius: 10px;
@@ -46,6 +67,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+
+    margin-top: 50px;
 }
 
 /* Стиль для карточки картинки */
@@ -56,11 +79,9 @@
     padding: 10px;
 }
 
+/* Стиль для ссылок на большие фото */
 .photo-card a {
-    /* padding: 0;
-    margin: 0; */
     height: 307px;
-    /* flex-grow: 1; */
 }
 
 /* Стиль для фото */
@@ -68,7 +89,6 @@
     width: 100%;
     height: 307px;
     flex-grow: 1;
-    /* object-fit: cover; */
 }
 
 /* Стиль для строки информации */

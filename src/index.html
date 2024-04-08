@@ -9,37 +9,49 @@
       rel="stylesheet"
       href="../node_modules/notiflix/dist/notiflix-3.2.7.min.css"
     />
-    <!-- <link
-      rel="stylesheet"
-      href="../node_modules/simplelightbox/dist/simple-lightbox.min.css"
-    /> -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css"
+      href="../node_modules/simplelightbox/dist/simple-lightbox.min.css"
     />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css"
+    /> -->
   </head>
   <body>
     <!-- Форма запроса -->
-    <form class="search-form" id="search-form">
-      <input
-        type="text"
-        name="searchQuery"
-        autocomplete="off"
-        placeholder="Search images..."
-      />
-      <button type="submit">Search</button>
-    </form>
+    <div class="header-fixed">
+      <form class="search-form" id="search-form">
+        <input
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Search images..."
+        />
+        <button class="btn-search" type="submit">
+          <img
+            width="15"
+            height="15"
+            src="https://img.icons8.com/ios/50/search--v1.png"
+            alt="search--v1"
+          />
+        </button>
+      </form>
+    </div>
     <!-- Модуль для вывода картинок -->
     <div class="gallery">
       <!-- Карточки изображений -->
     </div>
+    <!-- Нижняя граница группы фото -->
+    <div class="js-guard"></div>
     <!-- Кнопка Load more -->
     <div class="container">
       <button type="button" class="js-hidden btn-more">Load more</button>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
-    <script type="module" src="./index.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script> -->
+    <!-- <script type="module" src="./index.js"></script> -->
+    <script type="module" src="./index-autoscroll.js"></script>
     <script src="../node_modules/notiflix/dist/notiflix-3.2.7.min.js"></script>
-    <!-- <script src="../node_modules/simplelightbox/dist/simple-lightbox.min.js"></script> -->
+    <script src="../node_modules/simplelightbox/dist/simple-lightbox.min.js"></script>
   </body>
 </html>
